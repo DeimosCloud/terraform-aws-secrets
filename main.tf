@@ -6,11 +6,6 @@ terraform {
   }
 }
 
-provider "aws" {
-  region = "us-east-1"
-}
-
-
 resource "aws_secretsmanager_secret" "this" {
   name = var.name
 
