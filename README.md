@@ -28,20 +28,6 @@ module "secrets" {
 
 ```
 
-## Doc generation
-
-Code formatting and documentation for variables and outputs is generated using [pre-commit-terraform hooks](https://github.com/antonbabenko/pre-commit-terraform) which uses [terraform-docs](https://github.com/segmentio/terraform-docs).
-
-
-And install `terraform-docs` with
-```bash
-go get github.com/segmentio/terraform-docs
-```
-or
-```bash
-brew install terraform-docs.
-```
-
 ## Contributing
 
 Report issues/questions/feature requests on in the issues section.
@@ -53,24 +39,35 @@ Full contributing guidelines are covered [here](CONTRIBUTING.md).
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.26 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.12.26 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.0.0, > 4.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 3.74.0 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [aws_secretsmanager_secret.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/secretsmanager_secret) | resource |
+| [aws_secretsmanager_secret_version.example](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/secretsmanager_secret_version) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| name | (Required) Specifies the friendly name of the new secret. The secret name can consist of uppercase letters, lowercase letters, digits, and any of the following characters: /\_+=.@- | `any` | n/a | yes |
-| tags | (Optional) The labels assigned to this Secret | `map` | `{}` | no |
-| value | (Required) Specifies text data that you want to encrypt and store in this version of the secret. | `any` | n/a | yes |
+| <a name="input_name"></a> [name](#input\_name) | (Required) Specifies the friendly name of the new secret. The secret name can consist of uppercase letters, lowercase letters, digits, and any of the following characters: /\_+=.@- | `any` | n/a | yes |
+| <a name="input_tags"></a> [tags](#input\_tags) | (Optional) The labels assigned to this Secret | `map` | `{}` | no |
+| <a name="input_value"></a> [value](#input\_value) | (Required) Specifies text data that you want to encrypt and store in this version of the secret. | `any` | n/a | yes |
 
 ## Outputs
 
-No output.
-
+No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
